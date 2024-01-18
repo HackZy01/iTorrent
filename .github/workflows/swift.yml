@@ -1,4 +1,4 @@
-name: Build Bootstrap
+name: Build
 
 on:
   push:
