@@ -25,5 +25,4 @@ jobs:
         run: pod install
 
       - name: Build
-        run: xcodebuild -workspace iTorrent.xcworkspace -scheme iTorrent
-      
+xcodebuild -workspace iTorrent.xcworkspace -scheme iTorrent -destination 'platform=iOS Simulator,name=iPhone 8,OS=16.2' build      
