@@ -1,0 +1,28 @@
+name: Build Bootstrap
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  
+jobs:
+  build:
+    name: Build Bootstrap
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Install Cocoapods
+        run: sudo gem install cocoapods
+
+      - name: Setup Environment
+        run: pod install
+
+      - name: Build
+        run: swift build -v
+      
